@@ -14,8 +14,8 @@ hours over a 2 week period ). I thought I was going to want "hacky" solutions do
 the road to save time, but poor design decisions turned this into a ghastly, 
 hacked up pile of code that I'm *almost* embarassed to call my own. One const out the
 window and it's all downhill from there. It's cryptic, complex, and often monolithic.
-othing is private, nearly everything is mutable, and all the routines are tightly 
-coupled, like a wavering tower of poker cards. Suffice it to say, I learned a lot.
+nothing is private, nearly everything is mutable, and all the routines are tightly 
+coupled. Suffice it to say, I learned a lot.
 
 
 
