@@ -1,12 +1,15 @@
 C-Compiler-for-TINY-Architecture
 ================================
 
-C subset compiler I wrote for an honors project the fall semester of senior year.
+C subset compiler I wrote for an honors project.
 
-It was, for me, a "wicked problem", as Steve McConnell would say. I should've rewritten the thing at 
-least once early on, but I was coding as fast I could ( about 50 hours over a 2 week period ). Poor
-design decisions early on turned this into a ghastly, hacked up pile of code that I'm almost embarassed to call my own.
-But, it works.
+In the words of Steve McConnell, writing my first compiler was a "wicked problem". 
+I didn't know how to approach the task until I was 1/3 of the way done. I should've 
+redesigned it early on, but I was coding as fast I could ( about 50 hours over a 2 
+week period ). Poor design decisions early on turned this into a ghastly, hacked up
+pile of code that I'm *almost* embarassed to call my own. It's cryptic, complex, and
+sometimes monolithic. Nothing is private, and everything is tightly bound. At least 
+it works, by and large.
 
 
 
@@ -54,6 +57,7 @@ The compiler handles all of the following syntax:
       fun();
       fun( a + (b * c), 1+2/d );
       i = A[ i+10 ] = 74;
+      char* s = "hello world";
 
 
 
