@@ -106,3 +106,24 @@ you are allowed to use a void function as if it weren’t void
 you cannot use an expression /function call as arguments to puts( ) or putn( )
 
 etc...
+
+
+
+Coulda, shoulda, woulda:
+
+Shouldn't have passed so many containers by value, out of lazyness.
+Probably could've made use of RTTI or something more readable than dynamic_casting every 5 lines for typechecking.
+An AST implementation would've been nice to have.
+The Token class is a redundant, cumbersome proxy class that shouldn't have existed in the first place.
+Would've used a factory, rather than a proxy class, for creating tokens.
+Would've favored polymorphism and inheritance over those ridiculous and ultimately crippling macros.
+Would've used access specifiers from the start.
+The Terminal class would've had the role the Token class ended up with.
+Naming conventions were sometimes sloppy and I should've been stricter.
+Would've used either exclusively queues or exclusively vectors, rather than foolishly juggling both (probably vectors out of convenience).
+Should've had a stricter look-ahead policy.
+Would've used "design by contract" concepts with asserts at the beginning and end of every routine
+so that I'd know how the tokens should be queued up without having to debug.
+std::smart_ptr and std::weak_ptr would've saved me from rolling my own garbage collection.
+Would've overloaded the operator char*()  for the the Token class.
+Would've passed a container of delimiters instead of hacking them into place when I needed a new one.
