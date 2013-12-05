@@ -1,7 +1,7 @@
 C-Compiler-for-TINY-Architecture
 ================================
 
-C subset compiler I wrote for an honors project.
+This is a compiler for a subset of C that I wrote for an honors project.
 
 In the words of Steve McConnell, writing my first compiler was a "wicked problem". 
 I didn't know how to approach the task until I was 1/3 of the way done. I should've 
