@@ -14,7 +14,7 @@ However, it works, for the most part.
 
 What's supported:
 
-char, int, int[], char[], (void), char* (cursory support) types
+char, int, int[], char[], (void), char* (cursory support) types 
 functions
 literals supported: “ask a sad lass”, 1234, ‘T’
 escape sequences supported: “\n\r\t\0”
