@@ -3,6 +3,8 @@ C-Compiler-for-TINY-Architecture
 
 This is a compiler for a subset of C that I wrote for an honors project.
 
+The source code is in /src, info about the target is in /TIDE, and example c programs to compile are in /demo.
+
 In the words of Steve McConnell, writing my first compiler was a "wicked problem". 
 I didn't know how to approach the task until I was 1/3 of the way done. I should've 
 restarted from scratch at that point, but I was in a big hurry( I spent about 50 
