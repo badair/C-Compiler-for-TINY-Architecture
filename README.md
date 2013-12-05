@@ -5,8 +5,8 @@ C subset compiler I wrote for an honors project the fall semester of senior year
 
 It was, for me, a "wicked problem", as Steve McConnell would say. I should've rewritten the thing at 
 least once early on, but I was coding as fast I could ( about 50 hours over a 2 week period ). Poor
-design decisions early on turned this into a ghastly, hacked up pile of code that I'm embarassed to call my own.
-However, it works, for the most part.
+design decisions early on turned this into a ghastly, hacked up pile of code that I'm almost embarassed to call my own.
+But, it works.
 
 
 
