@@ -32,7 +32,7 @@ Global  declaration and initialization:
 
 The compiler handles all of the following syntax:
 
-      const int j = 0, k, i = 9 + 3, p = int fun(a,b,c);
+      const int j = 0, k, i = 9 + 3, p = fun(a,b,c);
       const int m = j + i;
       char array[ i ]; 
       fun();
@@ -66,3 +66,4 @@ scope might be buggy - i.e. variables of same name in different places might not
 function names aren’t checked at compile time ( variable names are )
 you are allowed to use a void function as if it weren’t void
 you cannot use an expression /function call as arguments to puts( ) or putn( )
+etc...
