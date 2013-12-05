@@ -4,20 +4,9 @@ C-Compiler-for-TINY-Architecture
 This is a compiler for a subset of C that I wrote for an honors project.
 
 The source code is in /src, info about the target is in /TIDE, and example c programs to compile are in /demo.
-Most of the code is in /src/parser.cpp.
 
 
-In the words of Steve McConnell, writing my first compiler was a "wicked problem". 
-I didn't know how to approach the task until I was 1/3 of the way done. I should've 
-restarted from scratch at that point, but I was in a big hurry( I spent about 50 
-hours over a 2 week period ). I thought I was going to want "hacky" solutions down
-the road to save time, but poor design decisions turned this into a ghastly, 
-hacked up pile of code that I'm *almost* embarassed to call my own. One const out the
-window and it's all downhill from there. It's cryptic, complex, and often monolithic.
-nothing is private, nearly everything is mutable, and all the routines are tightly 
-coupled. Suffice it to say, I learned a lot.
-
-
+Coded in a hurry; ended up being pretty hacky by the end. Still works, though.
 
 
 
