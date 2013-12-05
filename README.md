@@ -5,11 +5,13 @@ C subset compiler I wrote for an honors project.
 
 In the words of Steve McConnell, writing my first compiler was a "wicked problem". 
 I didn't know how to approach the task until I was 1/3 of the way done. I should've 
-redesigned it early on, but I was coding as fast I could ( about 50 hours over a 2 
-week period ). Poor design decisions early on turned this into a ghastly, hacked up
-pile of code that I'm *almost* embarassed to call my own. It's cryptic, complex, and
-sometimes monolithic. Nothing is private, and everything is tightly bound. At least 
-it works, by and large.
+restarted from scratch at that point, but I was in a big hurry( I spent about 50 
+hours over a 2 week period ). I thought I was going to want "hacky" solutions down
+the road to save time, but poor design decisions turned this into a ghastly, 
+hacked up pile of code that I'm *almost* embarassed to call my own. One const out the
+window and it's all downhill from there. It's cryptic, complex, and often monolithic.
+othing is private, nearly everything is mutable, and all the routines are tightly 
+coupled, like a wavering tower of poker cards. Suffice it to say, I learned a lot.
 
 
 
@@ -27,26 +29,21 @@ escape sequences supported: “\n\r\t\0”
 
 operators supported: - , +, *, /, &&, ||, ==, !=, >, >=, <, <= 
 
-(no unary operators)
-
-void functions may have an implicit return
+(no unary operators or modulo)
 
 for-loops, while-loops, if/else
 
-return statements
+void functions can have an implicit return
 
 output is performed using "puts" for strings, "putn" for ints
 
-relatively thorough compilation errors
+relatively thorough compilation errors, including line numbers
+
+Global initialization supports compile-time computation with literals 
+and initialized variables
 
 
 
-
-
-
-Global  declaration and initialization:
-
-  compile-time computation with literals and known variables
 
 The compiler handles all of the following syntax:
 
@@ -67,7 +64,7 @@ The compiler handles all of the following syntax:
 What's NOT supported:
 
 
-floating point numbers, structs, unions, pointer variables
+floating point numbers, structs, unions, indirection
 
 operators other than those listed ( including % )
 
@@ -75,7 +72,7 @@ unary operators (i.e. negating a variable with - )
 
 do...while loops
 
-implicit return types of int ( C allows this )
+implicit int return type
 
 initializer lists: { 1, 2, 3, 4 };
 
@@ -89,7 +86,9 @@ labels, goto
 
 switch/case
 
-and much, much more...
+console input
+
+and much more...
 
 
 
@@ -97,7 +96,8 @@ bugs and quirks:
 
 you must declare something in the first clause of a for-loop header
 
-the compile-time operations at global scope are syntactically less flexible than run-time operations
+definitions at global scope are syntactically less flexible than runtime computed expressions,
+mostly due to poor design decisions
 
 scope might be buggy - i.e. variables of same name in different places might not compile correctly
 
