@@ -25,7 +25,7 @@ literals supported: “ask a sad lass”, 1234, ‘T’
 
 escape sequences supported: “\n\r\t\0”
 
-operators supported: - +, *, /, &&, ||, ==, !=, >, >=, <, <= 
+operators supported: - , +, *, /, &&, ||, ==, !=, >, >=, <, <= 
 
 (no unary operators)
 
