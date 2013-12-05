@@ -1,0 +1,413 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 12 (filtered)">
+<title>The table below describes the machine instruction set available with
+TINY</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+h1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Arial","sans-serif";}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";
+	font-weight:bold;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";
+	font-weight:bold;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:8.5in 11.0in;
+	margin:.5in .5in .5in .5in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US>
+
+<div class=WordSection1>
+
+<p class=MsoNormal>The table below describes the machine instruction set
+available with TINY.  Several symbols are used in the descriptions: ACC =
+contents of the accumulator, c(x) = contents of memory at address x, PC =
+contents of the Program Counter, SP = contents of Stack Pointer register and c(SP)
+= contents of memory at the address indicated by the SP register.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>        <b><u>Op Code</u>        <u>Mnemonic</u>            <u>Description</u></b></p>
+
+<p class=MsoNormal>              00             <span style='font-size:9.0pt;
+font-family:"Courier New"'>STOP</span>                       STOP execution of
+TINY program.</p>
+
+<p class=MsoNormal>                                                                (Return
+control to the Operating System.)</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>              01             <span style='font-size:9.0pt;
+font-family:"Courier New"'>LD x</span>                       LoaD accumulator
+with contents at the address specified by operand 'x'.</p>
+
+<p class=MsoNormal>                                                                <span
+style='font-size:9.0pt;font-family:"Courier New"'>ACC = c(x)</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>              02             <span style='font-size:9.0pt;
+font-family:"Courier New"'>LDI x</span>                    LoaD (Indirect) accumulator
+with contents of memory at the address</p>
+
+<p class=MsoNormal>                                                                found
+in the memory location specified by 'x'.</p>
+
+<p class=MsoNormal>                                                                <span
+style='font-size:9.0pt;font-family:"Courier New"'>ACC = c(c(x))</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>              03             <span style='font-size:9.0pt;
+font-family:"Courier New"'>LDA x</span>                    LoaD Address
+specified by 'x' into accumulator.</p>
+
+<p class=MsoNormal>                                                                <span
+style='font-size:9.0pt;font-family:"Courier New"'>ACC = x</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>              04             <span style='font-size:9.0pt;
+font-family:"Courier New"'>ST x</span>                       STore contents of
+accumulator at address 'x'.</p>
+
+<p class=MsoNormal>                                                                <span
+style='font-size:9.0pt;font-family:"Courier New"'>c(x) = ACC</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>              05             <span style='font-size:9.0pt;
+font-family:"Courier New"'>STI x</span>                    STore  (Indirect)
+contents of accumulator at the address found in the</p>
+
+<p class=MsoNormal>                                                                memory
+location specified by 'x'.</p>
+
+<p class=MsoNormal>                                                                <span
+style='font-size:9.0pt;font-family:"Courier New"'>c(c(x)) = ACC</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>              06             <span style='font-size:9.0pt;
+font-family:"Courier New"'>ADD x</span>                    ADD contents at
+address 'x' to the accumulator.</p>
+
+<p class=MsoNormal>                                                                <span
+style='font-size:9.0pt;font-family:"Courier New"'>ACC = ACC + c(x)</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>              07             <span style='font-size:9.0pt;
+font-family:"Courier New"'>SUB x</span>                    SUBtract contents at
+address 'x' from the accumulator.</p>
+
+<p class=MsoNormal>                                                                <span
+style='font-size:9.0pt;font-family:"Courier New"'>ACC = ACC - c(x)</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>              08             <span style='font-size:9.0pt;
+font-family:"Courier New"'>MUL x</span>                    MULtiply contents at
+address 'x' to the accumulator.</p>
+
+<p class=MsoNormal>                                                                <span
+style='font-size:9.0pt;font-family:"Courier New"'>ACC = ACC * c(x)</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>              09             <span style='font-size:9.0pt;
+font-family:"Courier New"'>DIV x</span>                    DIVide contents of
+accumulator by the contents at 'x'.</p>
+
+<p class=MsoNormal>                                                                <span
+style='font-size:9.0pt;font-family:"Courier New"'>ACC = ACC / c(x)</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>              10             <span style='font-size:9.0pt;
+font-family:"Courier New"'>IN</span>                           INput a character
+from the keyboard and its ASCII code in the accumulator.</p>
+
+<p class=MsoNormal>                                                                <span
+style='font-size:9.0pt;font-family:"Courier New"'>ACC = ASCII of input
+character from STDIN (keyboard)</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>              11             <span style='font-size:9.0pt;
+font-family:"Courier New"'>OUT</span>                         OUTput the character
+associated with the ASCII code that is </p>
+
+<p class=MsoNormal>                                                                currently
+stored in the accumulator.</p>
+
+<p class=MsoNormal>                                                                <span
+style='font-size:9.0pt;font-family:"Courier New"'>Send ASCII character stored
+in ACC to STDOUT (screen)</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>              12             <span style='font-size:9.0pt;
+font-family:"Courier New"'>JMP x</span>                    JuMP to address 'x'. 
+(Unconditional Branch)</p>
+
+<p class=MsoNormal>                                                                <span
+style='font-size:9.0pt;font-family:"Courier New"'>PC = x</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>              13             <span style='font-size:9.0pt;
+font-family:"Courier New"'>JG x</span>                       Jump to address
+'x' if accumulator Greater than 0.  (Conditional Branch)</p>
+
+<p class=MsoNormal>                                                                <span
+style='font-size:9.0pt;font-family:"Courier New"'>if (ACC &gt; 0)  PC = </span><span
+style='font-family:"Courier New"'>x   </span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>              14             <span style='font-size:9.0pt;
+font-family:"Courier New"'>JL x</span>                       Jump to address 'x'
+if accumulator Less than 0.  (Conditional Branch)</p>
+
+<p class=MsoNormal>                                                                <span
+style='font-size:9.0pt;font-family:"Courier New"'>if (ACC &lt; 0)  PC = x   </span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>              15             <span style='font-size:9.0pt;
+font-family:"Courier New"'>JE x</span>                       Jump to address
+'x' if accumulator Equal to 0.  (Conditional Branch)</p>
+
+<p class=MsoNormal>                                                                <span
+style='font-size:9.0pt;font-family:"Courier New"'>if (ACC == 0) PC = x   </span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>              16             <span style='font-size:9.0pt;
+font-family:"Courier New"'>CALL x</span>                  CALL subroutine (function)
+whose address is specified by '<span style='font-family:"Courier New"'>x</span>'.</p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>                                  SP   
+= SP - 1</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>                                  c(SP)
+= PC</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>                                  SP   
+= SP – 1</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>                                  c(SP)
+= BP</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>                                  BP   
+= SP</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>                                  PC   
+= x</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>              17             <span style='font-size:9.0pt;
+font-family:"Courier New"'>RET</span>                         RETurn from subroutine.</p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>                                  SP   
+= BP</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>                                  BP   
+= c(SP)</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>                                  SP   
+= SP + 1</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>                                  PC   
+= c(SP)</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>                                  SP   
+= SP + 1</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>              18             <span style='font-size:9.0pt;
+font-family:"Courier New"'>PUSH</span>                       PUSH contents of accumulator
+onto stack.</p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>                                  SP   
+= SP - 1</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>                                  c(SP)
+= ACC</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>              19             <span style='font-size:9.0pt;
+font-family:"Courier New"'>POP</span>                         POP value off of
+stack and place in accumulator.</p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>                                  ACC 
+ = c(SP)</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>                                  SP   
+= SP + 1</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>              20             <span style='font-size:9.0pt;
+font-family:"Courier New"'>LDPARAM n</span>           LoaD accumulator with a copy
+of the <span style='font-size:9.0pt;font-family:"Courier New"'>n</span><sup>th</sup>
+PARAMeter found in the system stack.</p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>                                  ACC 
+ = c(BP+n+1)</span></p>
+
+<h3><span style='font-size:11.0pt'>Assembler Directives</span><span
+style='font-size:8.0pt'> </span><span style='font-size:9.0pt'>(pseudo-ops)</span></h3>
+
+<p class=MsoHeader>                                <span style='font-size:9.0pt;
+font-family:"Courier New"'>DC “string”</span>      Define Character string. 
+ASCII codes for characters within quotation marks</p>
+
+<p class=MsoHeader>                                                                are
+stored in consecutive addresses.</p>
+
+<p class=MsoNormal><span style='font-size:8.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal>                                <span style='font-size:9.0pt;
+font-family:"Courier New"'>DB  n</span>                    Define Byte.  Places
+decimal value of <span style='font-size:9.0pt;font-family:"Courier New"'>n</span>
+in byte at current address.  (<span style='font-size:9.0pt;font-family:"Courier New"'>n</span>
+must be an integer.)</p>
+
+<p class=MsoNormal>                                                                Equivalents: 
+       <span style='font-size:9.0pt;font-family:"Courier New"'>DW  n</span>        and             <span
+style='font-size:9.0pt;font-family:"Courier New"'>DD  n</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal>                                <span style='font-size:9.0pt;
+font-family:"Courier New"'>DS  n</span>                    Define Storage. 
+Reserves next <span style='font-size:9.0pt;font-family:"Courier New"'>n</span>
+addresses for future use.  (<span style='font-size:9.0pt;font-family:"Courier New"'>n</span>
+must be a positive integer.)</p>
+
+<p class=MsoNormal><span style='font-size:8.0pt'>&nbsp;</span></p>
+
+<h3><span style='font-size:11.0pt'>ROM routines</span></h3>
+
+<p class=MsoNormal>These ROM routines are available to aid I/O operations.  The
+“<span style='font-family:"Courier New"'>CALL</span>” instruction must be used
+to call each of these routines:</p>
+
+<p class=MsoNormal><span style='font-size:8.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal>        <b><u>Address</u>         <u>Mnemonic</u>            <u>Description</u></b></p>
+
+<p class=MsoNormal>            900             <span style='font-size:9.0pt;
+font-family:"Courier New"'>PRINTN</span>                  Converts current
+integer value in ACC to ASCII characters and outputs the result.</p>
+
+<p class=MsoNormal><span style='font-size:9.0pt;font-family:"Courier New"'>                                  ld     integerValue</span></p>
+
+<p class=MsoNormal><span style='font-size:9.0pt;font-family:"Courier New"'>                                  call   printn</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal>            925             <span style='font-size:9.0pt;
+font-family:"Courier New"'>PRINTC</span>                  Outputs ASCII
+characters contained in memory at the location specified by ACC.</p>
+
+<p class=MsoNormal>                                                                Careful:
+Output continues until a null-terminator (or zero byte) is detected!</p>
+
+<p class=MsoNormal><span style='font-size:9.0pt;font-family:"Courier New"'>                                  lda    string</span></p>
+
+<p class=MsoNormal><span style='font-size:9.0pt;font-family:"Courier New"'>                                  call   printc</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoHeader>            950             <span style='font-size:9.0pt;
+font-family:"Courier New"'>INPUTN</span>                  Execution pauses to
+accept a numeric value from the user.  The input is converted to</p>
+
+<p class=MsoHeader>                                                                decimal
+format and stored in ACC.</p>
+
+<p class=MsoNormal><span style='font-size:9.0pt;font-family:"Courier New"'>                                  call   inputn</span></p>
+
+<p class=MsoNormal><span style='font-size:9.0pt;font-family:"Courier New"'>                                  st     integerValue</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal>            975             <span style='font-size:9.0pt;
+font-family:"Courier New"'>INPUTC</span>                  Execution pauses to
+accept ASCII text from the user.  The input is stored in memory</p>
+
+<p class=MsoNormal style='margin-left:2.0in'>beginning with the address
+specified by ACC.  A trailing null-terminator will be appended to the end of
+the ASCII string.</p>
+
+<p class=MsoNormal><span style='font-size:9.0pt;font-family:"Courier New"'>                                  lda    string_inputbuffer</span></p>
+
+<p class=MsoNormal><span style='font-size:9.0pt;font-family:"Courier New"'>                                  call   inputc</span></p>
+
+<p class=MsoNormal><span style='font-size:9.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>
