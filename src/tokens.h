@@ -11,8 +11,9 @@
 #include "tinycexceptions.h"
 
 //should've had a tokenFactory function
-//Terminal should've been Token, and everything should've inherited from it rather than Terminal
+//"Terminal" class should've been called "Token", and everything should've inherited from it
 
+//Example of how not to use a macro
 #define declareName(type)  const string name() const override { string s(#type); s.erase( s.length() - 6 ); return s; } string myV; int lineNumber; type(){} type( const string& v, int ln = -1, int prec = -1 ): myV(v), lineNumber(ln) {checkString(); precedence = prec; } const string value() const override {return myV;} 
 
 using namespace std;
