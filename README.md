@@ -97,8 +97,6 @@ the compile-time operations at global scope are syntactically less flexible than
 
 scope might be buggy - i.e. variables of same name in different places might not compile correctly
 
-function names aren’t checked at compile time ( variable names are )
-
 you are allowed to use a void function as if it weren’t void
 
 you cannot use an expression /function call as arguments to puts( ) or putn( )
