@@ -33,9 +33,6 @@ relatively thorough compilation errors, including line numbers
 Global initialization supports compile-time computation with literals 
 and initialized variables
 
-
-
-
 The compiler handles all of the following syntax:
 
 
@@ -47,13 +44,10 @@ The compiler handles all of the following syntax:
       i = A[ i+10 ] = 74;
       char* s = "hello world";
 
-
-
-
+Example programs to compile are included in the source.
 
 
 What's NOT supported:
-
 
 floating point numbers, structs, unions, indirection
 
@@ -73,7 +67,7 @@ forward declaration of functions
 
 comments :(
 
-labels, goto
+goto
 
 switch/case
 
@@ -90,7 +84,7 @@ you must declare something in the first clause of a for-loop header
 definitions at global scope are syntactically less flexible than runtime computed expressions,
 mostly due to poor design decisions
 
-scope might be buggy - i.e. variables of same name in different places might not compile correctly
+scope was not well tested - variables of same name in different places might not compile correctly
 
 you are allowed to use a void function as if it weren’t void
 
@@ -104,13 +98,11 @@ Coulda, shoulda, woulda:
 
 Shouldn't have passed so many containers by value, out of lazyness.
 
-Probably could've made use of RTTI or something more readable than dynamic_casting every 5 lines for typechecking.
+I misused polymorphism. You can tell by how often I typecheck every few lines with dynamic_cast.
 
 An AST implementation would've been nice to have.
 
-The Token class is a redundant, cumbersome proxy class that shouldn't have existed in the first place.
-
-Would've used a factory, rather than a proxy class, for creating tokens.
+The Token class is a redundant, cumbersome class that shouldn't have existed in the first place.
 
 Would've favored polymorphism and inheritance over those ridiculous and ultimately crippling macros.
 
@@ -129,7 +121,7 @@ Would've used "design by contract" concepts with asserts at the beginning and en
 
 so that I'd know how the tokens should be queued up without having to debug.
 
-std::smart_ptr and std::weak_ptr would've saved me from rolling my own garbage collection.
+std::smart_ptr and std::weak_ptr would've saved me some memory headaches
 
 Would've overloaded the operator char*()  for the the Token class.
 
