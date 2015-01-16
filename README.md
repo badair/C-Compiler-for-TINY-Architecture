@@ -4,8 +4,7 @@ C-Compiler-for-TINY-Architecture
 This is a compiler for a subset of C that I wrote for an honors project.
 
 The source code is in /src, info about the target is in /TIDE, and example c programs to compile are in /demo.
-Coded in a hurry; ended up being pretty hacky by the end. Still works, though.
-
+I coded this in about 50 hours, rushing to meet a deadline. I don't normally make excuses for my code, but this is just too ugly.
 
 
 What's supported:
