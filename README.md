@@ -44,8 +44,6 @@ The compiler handles all of the following syntax:
       i = A[ i+10 ] = 74;
       char* s = "hello world";
 
-Example programs to compile are included in the source.
-
 
 What's NOT supported:
 
