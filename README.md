@@ -93,6 +93,8 @@ etc...
 
 Coulda, shoulda, woulda:
 
+The parser does a lot more than parsing.
+
 Shouldn't have passed so many containers by value, out of lazyness.
 
 I misused polymorphism. You can tell by how often I typecheck every few lines with dynamic_cast.
